@@ -3,9 +3,79 @@
 @tailwind utilities;
 
 @layer base {
+  .background {
+    @apply relative overflow-hidden bg-gradient-to-b from-[#8be5c2] to-[#2bbaa8];
+  }
 }
 
 @layer components {
+  .floor {
+    @apply absolute bottom-0 z-10 h-20 w-full bg-[#019243] bg-gradient-to-t from-[#915f3c] from-10% to-[#009345] to-10%;
+  }
+
+  .pattern {
+    @apply absolute bottom-2 z-20 h-8 w-full bg-[linear-gradient(35deg,var(--tw-gradient-stops))] from-[#70b929] from-50% to-[#059242] to-50% bg-[length:32px_32px];
+  }
+
+  .left-tree {
+    @apply absolute bottom-20 left-[10%] h-48 w-2.5;
+  }
+
+  .left-tree::after {
+    @apply absolute h-52 w-2.5 rounded-tl-lg rounded-tr-lg bg-[#746057] content-[""];
+  }
+
+  .left-tree::before {
+    @apply absolute -left-5 -top-4 h-12 w-12 rounded-full bg-[#27ae61] shadow-[0px_0px_0_25px_#27ae61,0px_100px_0_25px_#27ae61,-50px_90px_0_10px_#27ae61,-50px_35px_0_10px_#27ae61,0px_40px_0_25px_#27ae61,-20px_40px_0_25px_#27ae61,50px_90px_0_10px_#27ae61,60px_30px_0_15px_#27ae61,50px_-17px_0_0px_#27ae61] content-[""];
+  }
+
+  .left-tree div:nth-child(1) {
+    @apply absolute h-28 w-2.5 origin-bottom rotate-[30deg] rounded-tl-lg rounded-tr-lg bg-[#746057];
+  }
+
+  .left-tree div:nth-child(1)::after {
+    @apply absolute h-14 w-2.5 origin-bottom rotate-[30deg] rounded-tl-lg rounded-tr-lg bg-[#746057] content-[""];
+  }
+
+  .left-tree div:nth-child(2) {
+    @apply absolute bottom-32 h-16 w-2.5 origin-bottom -rotate-45 rounded-tl-lg rounded-tr-lg bg-[#746057] shadow-[-50px_50px_0_0_#746057];
+  }
+
+  .center-tree {
+    @apply absolute bottom-14 right-[25%] h-20 w-36 rounded-full bg-[#27ae61];
+  }
+
+  .center-tree div:nth-child(1) {
+    @apply absolute bottom-10 right-5 size-24 rounded-full bg-[#27ae61];
+  }
+
+  .right-tree {
+    @apply absolute bottom-20 right-[10%] h-52 w-2.5 rounded-tl-lg rounded-tr-lg bg-[#746057];
+  }
+
+  .right-tree::after {
+    @apply absolute bottom-44 left-[calc(20%_-_50px)] size-28 rounded-full bg-[#009345] shadow-[0_100px_0_30px_#009345] content-[""];
+  }
+
+  .sun {
+    @apply absolute right-28 top-16 size-28 rounded-full bg-amber-400 shadow-[0_0_35px_5px_yellow,0_0_25px_10px_yellow_inset];
+  }
+
+  .cloud-left {
+    @apply animate-cloudLeft absolute left-0 top-48 z-10;
+  }
+
+  .cloud-left::after {
+    @apply absolute -left-12 -top-24 size-24 rounded-full bg-[#c0ebe2] shadow-[150px_0_0_0_#c0ebe2,80px_-50px_0_0_#c0ebe2,80px_0px_0_0_#c0ebe2,115px_31px_0_-30px_#c0ebe2,40px_31px_0_-30px_#c0ebe2,30px_31px_0_-30px_#c0ebe2,50px_31px_0_-30px_#c0ebe2] content-[""];
+  }
+
+  .cloud-right {
+    @apply animate-cloudRight absolute right-0 top-80;
+  }
+
+  .cloud-right::after {
+    @apply absolute -left-12 -top-24 size-24 rounded-full bg-[#a6e4d5] shadow-[150px_0_0_0_#a6e4d5,60px_-60px_0_0_#a6e4d5,250px_0px_0_0_#a6e4d5,200px_-60px_0_0_#a6e4d5,130px_-40px_0_0_#a6e4d5,40px_0px_0_0_#a6e4d5,80px_0px_0_0_#a6e4d5,110px_0px_0_0_#a6e4d5,180px_0px_0_0_#a6e4d5,210px_0px_0_0_#a6e4d5] content-[""];
+  }
 }
 
 @layer utilities {

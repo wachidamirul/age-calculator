@@ -3,7 +3,6 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js}"],
-  darkMode: "selector",
   theme: {
     container: {
       center: true,
@@ -17,6 +16,14 @@ module.exports = {
         "2xl": "1320px",
       },
       keyframes: {
+        cloudMoveLeft: {
+          "0%": { left: "-10%" },
+          "100%": { left: "120%" },
+        },
+        cloudMoveRight: {
+          "0%": { right: "-10%" },
+          "100%": { right: "130%" },
+        },
         slideUp: {
           "0%": { transform: "translateY(50%)" },
           "50%": { transform: "translateY(0)" },
@@ -27,6 +34,8 @@ module.exports = {
         },
       },
       animation: {
+        cloudLeft: "cloudMoveLeft 15s linear infinite",
+        cloudRight: "cloudMoveRight 20s linear infinite",
         slideUp: "slideUp 0.5s ease-in-out",
         slideDown: "slideDown 0.5s ease-in-out",
       },
