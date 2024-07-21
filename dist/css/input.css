@@ -54,7 +54,7 @@
   }
 
   .right-tree::after {
-    @apply absolute bottom-44 left-[calc(20%_-_50px)] size-28 rounded-full bg-[#009345] shadow-[0_100px_0_30px_#009345] content-[""];
+    @apply absolute bottom-44 left-[calc(20%_-_50px)] size-24 rounded-full bg-[#009345] shadow-[0_100px_0_30px_#009345] content-[""];
   }
 
   .sun {
@@ -75,6 +75,60 @@
 
   .cloud-right::after {
     @apply absolute -left-12 -top-24 size-24 rounded-full bg-[#a6e4d5] shadow-[150px_0_0_0_#a6e4d5,60px_-60px_0_0_#a6e4d5,250px_0px_0_0_#a6e4d5,200px_-60px_0_0_#a6e4d5,130px_-40px_0_0_#a6e4d5,40px_0px_0_0_#a6e4d5,80px_0px_0_0_#a6e4d5,110px_0px_0_0_#a6e4d5,180px_0px_0_0_#a6e4d5,210px_0px_0_0_#a6e4d5] content-[""];
+  }
+
+  .wrap-bench {
+    @apply flex w-full items-end justify-center;
+  }
+
+  .bench {
+    @apply absolute bottom-20 w-full max-w-sm;
+  }
+
+  .bench div:nth-child(1) {
+    @apply relative z-10 h-10 w-full rounded-lg bg-[#ffb868];
+  }
+
+  .bench div:nth-child(1)::before {
+    @apply absolute left-[28px] top-[15px] size-3 rounded-full bg-[#d97f50] content-[""];
+  }
+
+  .bench div:nth-child(1)::after {
+    @apply absolute right-[28px] top-[15px] size-3 rounded-full bg-[#d97f50] content-[""];
+  }
+
+  .bench div:nth-child(2) {
+    @apply relative z-10 my-2 h-10 w-full rounded-lg bg-[#ef9c58];
+  }
+
+  .bench div:nth-child(2)::before {
+    @apply absolute left-[28px] top-[15px] size-3 rounded-full bg-[#d97f50] content-[""];
+  }
+
+  .bench div:nth-child(2)::after {
+    @apply absolute right-[28px] top-[15px] size-3 rounded-full bg-[#d97f50] content-[""];
+  }
+
+  .bench .seat {
+    @apply relative z-10 mb-10 mt-2 h-10 w-full overflow-hidden;
+  }
+  .bench .seat div:nth-child(1) {
+    @apply bg-[#ffb868];
+  }
+  .bench .seat div:nth-child(1)::before {
+    @apply absolute left-0 top-[25%] h-3 w-full rounded-none bg-[#eb954b] content-[""];
+  }
+
+  .bench .seat div:nth-child(1)::after {
+    @apply absolute bottom-0 left-0 right-auto top-auto h-2 w-full rounded-none bg-[#eb954b] content-[""];
+  }
+
+  .bench::before {
+    @apply absolute left-6 top-0 h-60 w-5 rounded-tl-lg rounded-tr-lg bg-[#3f3327] content-[""];
+  }
+
+  .bench::after {
+    @apply absolute right-6 top-0 h-60 w-5 rounded-tl-lg rounded-tr-lg bg-[#3f3327] content-[""];
   }
 }
 
