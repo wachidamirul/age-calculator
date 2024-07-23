@@ -7,56 +7,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
       rel="stylesheet"
     />
     <title>Age Calculator</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body class="font-poppins antialiased">
-    <main class="background h-screen w-full">
-      <section id="canvas">
-        <div class="floor"></div>
-        <div class="pattern"></div>
-        <div class="wrap-bench">
-          <div class="bench">
-            <div></div>
-            <div></div>
-            <div class="seat">
-              <div></div>
-            </div>
+  <body class="background font-permanent-marker antialiased">
+    <main class="container">
+      <section class="relative grid h-screen grid-cols-2 gap-x-10">
+        <div class="blackboard place-self-center">
+          <div class="form">
+            <p>
+              <label>Tanggal: </label>
+              <input type="text" />
+            </p>
+            <p>
+              <label>Bulan: </label>
+              <input type="text" />
+            </p>
+            <p>
+              <label>Tahun: </label>
+              <input type="tel" />
+            </p>
           </div>
         </div>
-        <div class="left-tree">
-          <div></div>
-          <div></div>
-        </div>
-        <div class="center-tree">
-          <div></div>
-        </div>
-        <div class="right-tree"></div>
-        <div class="sun"></div>
-        <div class="cloud-left"></div>
-        <div class="cloud-right"></div>
-      </section>
-      <section class="flex justify-center">
-        <img
-          src="./assets/models/young-adult.gif"
-          id="model"
-          style="
-            width: 245px;
-            height: auto;
-            z-index: 20;
-            position: absolute;
-            bottom: 65px;
-          "
-        />
-      </section>
-      <section class="flex justify-center" id="board">
-        <div class="w-full max-w-lg">
-          <div
-            class="h-[417px] w-full bg-[url('../assets/board.png')] bg-contain bg-no-repeat"
-          ></div>
+        <div class="model place-self-end">
+          <img
+            src="./assets/models/very-old.gif"
+            alt="model"
+            style="width: 370px; margin-bottom: 40px"
+          />
         </div>
       </section>
     </main>

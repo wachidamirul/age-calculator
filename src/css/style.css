@@ -564,6 +564,44 @@ video {
   --tw-contain-style:  ;
 }
 
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1320px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
 .floor {
   position: absolute;
   bottom: 0px;
@@ -978,16 +1016,24 @@ video {
   position: absolute;
 }
 
+.relative {
+  position: relative;
+}
+
 .flex {
   display: flex;
 }
 
-.h-\[417px\] {
-  height: 417px;
+.grid {
+  display: grid;
 }
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[417px\] {
+  height: 417px;
 }
 
 .w-full {
@@ -998,8 +1044,25 @@ video {
   max-width: 32rem;
 }
 
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .justify-center {
   justify-content: center;
+}
+
+.gap-x-10 {
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
+}
+
+.place-self-end {
+  place-self: end;
+}
+
+.place-self-center {
+  place-self: center;
 }
 
 .bg-\[url\(\'\.\.\/assets\/board\.png\'\)\] {
@@ -1014,8 +1077,8 @@ video {
   background-repeat: no-repeat;
 }
 
-.font-poppins {
-  font-family: "Poppins", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+.font-permanent-marker {
+  font-family: "Permanent Marker", cursive, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .antialiased {

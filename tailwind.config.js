@@ -10,7 +10,10 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        poppins: ['"Poppins"', ...defaultTheme.fontFamily.sans],
+        "permanent-marker": [
+          '"Permanent Marker", cursive',
+          ...defaultTheme.fontFamily.sans,
+        ],
       },
       screens: {
         "2xl": "1320px",
