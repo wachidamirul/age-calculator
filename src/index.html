@@ -15,26 +15,31 @@
   </head>
   <body class="background font-permanent-marker antialiased">
     <main class="container">
-      <section class="relative grid h-screen grid-cols-2 gap-x-10">
+      <section
+        class="relative flex h-screen flex-col justify-between gap-x-10 lg:flex-row"
+      >
         <div class="blackboard place-self-center">
-          <div class="form">
+          <div class="px-5 pb-5 pt-24">
             <p>
               <label>Tanggal: </label>
-              <input type="text" />
+              <input type="number" />
             </p>
             <p>
               <label>Bulan: </label>
-              <input type="text" />
+              <input type="number" />
             </p>
             <p>
               <label>Tahun: </label>
-              <input type="tel" />
+              <input type="number" />
+            </p>
+            <p class="wipeout">
+              <input type="submit" value="Calculate" />
             </p>
           </div>
         </div>
         <div class="model place-self-end">
           <img
-            src="./assets/models/very-old.gif"
+            src="./assets/models/cat.gif"
             alt="model"
             style="width: 370px; margin-bottom: 40px"
           />

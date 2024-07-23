@@ -4,17 +4,56 @@
 
 @layer base {
   .background {
-    @apply relative h-screen overflow-hidden bg-[url('../assets/bg.jpg')] bg-cover bg-center;
+    @apply relative h-screen overflow-hidden bg-[url('../assets/background.jpg')] bg-cover bg-center;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  p {
+    @apply relative mb-4;
+  }
+
+  label {
+    @apply align-middle text-3xl text-[#eeeeee]/[0.7];
+  }
+
+  p:nth-of-type(5) > label {
+    @apply align-top;
+  }
+
+  input,
+  textarea {
+    @apply border-none bg-transparent pl-2.5 align-middle text-3xl leading-3 text-[#eeeeee]/[0.8] outline-none;
+  }
+
+  textarea {
+    @apply h-[120px] resize-none text-3xl leading-3;
+  }
+
+  input[type="submit"] {
+    @apply cursor-pointer p-0 leading-normal text-[#eeeeee]/[0.7] transition-all duration-300 ease-in-out;
+  }
+
+  input[type="submit"]:focus {
+    @apply bg-transparent text-[#eeeeee]/[0.4];
   }
 }
 
 @layer components {
   .blackboard {
-    @apply relative w-full max-w-2xl border-[12px] border-solid border-[#d2b48c] border-b-[#c9ad86] border-l-[#b19876] border-t-[#bda27e] bg-[#333333] bg-[radial-gradient(_circle_at_left_30%,rgba(34,34,34,0.3),rgba(34,34,34,0.3)_80px,rgba(34,34,34,0.5)_100px,rgba(51,51,51,0.5)_160px,rgba(51,51,51,0.5)_),linear-gradient(_215deg,transparent,transparent_100px,#222_260px,#222_320px,transparent_),radial-gradient(circle_at_right,#111,rgba(51,51,51,1))] shadow-[0px_0px_6px_5px_rgba(58,18,13,0),0px_0px_0px_2px_#c2a782,0px_0px_0px_4px_#a58e6f,3px_4px_8px_5px_rgba(0,0,0,0.5)];
+    @apply relative w-full max-w-xl border-[12px] border-solid border-[#d2b48c] border-b-[#c9ad86] border-l-[#b19876] border-t-[#bda27e] bg-[#333333] bg-[radial-gradient(_circle_at_left_30%,rgba(34,34,34,0.3),rgba(34,34,34,0.3)_80px,rgba(34,34,34,0.5)_100px,rgba(51,51,51,0.5)_160px,rgba(51,51,51,0.5)_),linear-gradient(_215deg,transparent,transparent_100px,#222_260px,#222_320px,transparent_),radial-gradient(circle_at_right,#111,rgba(51,51,51,1))] shadow-[0px_0px_6px_5px_rgba(58,18,13,0),0px_0px_0px_2px_#c2a782,0px_0px_0px_4px_#a58e6f,3px_4px_8px_5px_rgba(0,0,0,0.5)] md:max-w-lg lg:max-w-xl xl:max-w-2xl;
   }
 
   .blackboard:before {
-    @apply absolute box-border block size-full border-2 border-solid border-[#2c2c2c] bg-[linear-gradient(_175deg,transparent,transparent_40px,rgba(120,120,120,0.1)_100px,rgba(120,120,120,0.1)_110px,transparent_220px,transparent_),linear-gradient(200deg,transparent_80%,rgba(50,50,50,0.3)),radial-gradient(_ellipse_at_right_bottom,transparent,transparent_200px,rgba(80,80,80,0.1)_260px,rgba(80,80,80,0.1)_320px,transparent_400px,transparent_)] pt-5 text-center text-[2.2em] text-[rgba(238,238,238,0.7)] content-["Age_Calculator"];
+    @apply absolute box-border block size-full border-2 border-solid border-[#2c2c2c] bg-[linear-gradient(_175deg,transparent,transparent_40px,rgba(120,120,120,0.1)_100px,rgba(120,120,120,0.1)_110px,transparent_220px,transparent_),linear-gradient(200deg,transparent_80%,rgba(50,50,50,0.3)),radial-gradient(_ellipse_at_right_bottom,transparent,transparent_200px,rgba(80,80,80,0.1)_260px,rgba(80,80,80,0.1)_320px,transparent_400px,transparent_)] pt-5 text-center text-4xl text-[#eeeeee]/[0.7] content-["Age_Calculator"];
+  }
+
+  .wipeout {
+    @apply text-center;
   }
 }
 
