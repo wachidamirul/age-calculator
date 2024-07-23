@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,8 +39,27 @@
         <div class="cloud-left"></div>
         <div class="cloud-right"></div>
       </section>
+      <section class="flex justify-center">
+        <img
+          src="./assets/models/young-adult.gif"
+          id="model"
+          style="
+            width: 245px;
+            height: auto;
+            z-index: 20;
+            position: absolute;
+            bottom: 65px;
+          "
+        />
+      </section>
+      <section class="flex justify-center" id="board">
+        <div class="w-full max-w-lg">
+          <div
+            class="h-[417px] w-full bg-[url('../assets/board.png')] bg-contain bg-no-repeat"
+          ></div>
+        </div>
+      </section>
     </main>
-    <script src="./js/lottie-player.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
