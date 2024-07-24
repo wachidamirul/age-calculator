@@ -9,12 +9,7 @@ const ageRanges = [
   { min: 4, max: 7, src: "./assets/models/preschooler.gif", width: "370px" },
   { min: 8, max: 12, src: "./assets/models/elementary.gif", width: "480px" },
   { min: 13, max: 18, src: "./assets/models/teenager.gif", width: "530px" },
-  {
-    min: 19,
-    max: 35,
-    src: "./assets/models/young-adult.gif",
-    width: "410px",
-  },
+  { min: 19, max: 35, src: "./assets/models/young-adult.gif", width: "410px" },
   { min: 36, max: 65, src: "./assets/models/adult.gif", width: "530px" },
   { min: 66, max: 75, src: "./assets/models/old.gif", width: "530px" },
   { min: 76, max: 100, src: "./assets/models/very-old.gif", width: "280px" },
@@ -35,6 +30,7 @@ const listOfMonths = [
   { month: "December", short: "Dec" },
 ];
 
+// Function to show the introduction and switch to calculator after 5 seconds
 const introduction = () => {
   const group = document.getElementById("group");
   const calculator = document.getElementById("calculator");
@@ -56,6 +52,7 @@ const introduction = () => {
   updateTimer();
 };
 
+// Function to render list of days in a month
 const renderDateList = () => {
   const modal = document.getElementById("modalDays");
   const element = document.getElementById("mainDay");
@@ -69,11 +66,13 @@ const renderDateList = () => {
   modal.classList.remove("hidden");
 };
 
+// Function to set the selected date
 const setDate = (date) => {
   document.getElementById("date").innerHTML = date.toString().padStart(2, "0");
   document.getElementById("modalDays").classList.add("hidden");
 };
 
+// Function to render list of months
 const renderMonthList = () => {
   const modal = document.getElementById("modalMonths");
   const element = document.getElementById("mainMonth");
@@ -85,6 +84,7 @@ const renderMonthList = () => {
   modal.classList.remove("hidden");
 };
 
+// Function to set the selected month
 const setMonth = (month) => {
   document.getElementById("month").innerHTML = month;
   document.getElementById("modalMonths").classList.add("hidden");
@@ -97,6 +97,7 @@ const startYear = 1800;
 const totalYears = currentYear - startYear + 1;
 const totalPages = Math.ceil(totalYears / yearsPerPage);
 
+// Function to render list of years with pagination
 const renderYearList = (page = 1) => {
   const modal = document.getElementById("modalYears");
   const element = document.getElementById("mainYear");
@@ -120,23 +121,27 @@ const renderYearList = (page = 1) => {
   currentPage = page;
 };
 
+// Function to set the selected year
 const setYear = (year) => {
   document.getElementById("year").innerHTML = year;
   document.getElementById("modalYears").classList.add("hidden");
 };
 
+// Function to go to the previous page of years
 const previousPage = () => {
   if (currentPage > 1) {
     renderYearList(currentPage - 1);
   }
 };
 
+// Function to go to the next page of years
 const nextPage = () => {
   if (currentPage < totalPages) {
     renderYearList(currentPage + 1);
   }
 };
 
+// Function to calculate age based on the selected date, month, and year
 const calculate = () => {
   const now = new Date();
   const date = document.getElementById("date").innerText;
@@ -162,6 +167,7 @@ const calculate = () => {
   updateModelAndResult(ageYears, ageMonths, ageDays, model, result);
 };
 
+// Function to display error messages
 const displayError = (message, model, result) => {
   result.innerText = message;
   model.src = "./assets/models/cat.gif";
@@ -169,6 +175,7 @@ const displayError = (message, model, result) => {
   model.style.marginBottom = "40px";
 };
 
+// Function to calculate age in years, months, and days
 const calculateAge = (birthDate, now) => {
   let ageYears = now.getFullYear() - birthDate.getFullYear();
   let ageMonths = now.getMonth() - birthDate.getMonth();
@@ -187,6 +194,7 @@ const calculateAge = (birthDate, now) => {
   return { ageYears, ageMonths, ageDays };
 };
 
+// Function to update the model image and result text based on the calculated age
 const updateModelAndResult = (ageYears, ageMonths, ageDays, model, result) => {
   const modelData = ageRanges.find(
     (range) => ageYears >= range.min && ageYears <= range.max,
