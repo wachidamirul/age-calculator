@@ -20,21 +20,61 @@
       >
         <div class="blackboard place-self-center">
           <div class="px-5 pb-5 pt-24">
-            <p>
-              <label>Tanggal: </label>
-              <input type="number" />
-            </p>
-            <p>
-              <label>Bulan: </label>
-              <input type="number" />
-            </p>
-            <p>
-              <label>Tahun: </label>
-              <input type="number" />
-            </p>
-            <p class="wipeout">
-              <input type="submit" value="Calculate" />
-            </p>
+            <div class="px-5">
+              <div class="relative mb-4 flex items-center">
+                <label class="align-middle text-3xl text-[#eeeeee]/[0.7]"
+                  >Date:
+                </label>
+                <input
+                  class="w-full border-none bg-transparent pl-2.5 align-middle text-3xl leading-3 text-[#eeeeee]/[0.8] outline-none"
+                  type="number"
+                  value="1"
+                  min="1"
+                  max="31"
+                  name="day"
+                  id="day"
+                />
+              </div>
+              <div class="relative mb-4 flex items-center">
+                <label class="align-middle text-3xl text-[#eeeeee]/[0.7]"
+                  >Month:
+                </label>
+                <input
+                  class="w-full border-none bg-transparent pl-2.5 align-middle text-3xl leading-3 text-[#eeeeee]/[0.8] outline-none"
+                  type="number"
+                  value="5"
+                  min="1"
+                  max="12"
+                  name="month"
+                  id="month"
+                />
+              </div>
+              <div class="relative mb-4 flex items-center">
+                <label class="align-middle text-3xl text-[#eeeeee]/[0.7]"
+                  >Year:
+                </label>
+                <input
+                  class="w-full border-none bg-transparent pl-2.5 align-middle text-3xl leading-3 text-[#eeeeee]/[0.8] outline-none"
+                  type="number"
+                  value="2000"
+                  min="1000"
+                  max="9999"
+                  name="year"
+                  id="year"
+                />
+              </div>
+            </div>
+            <div class="relative mt-8 text-center">
+              <input
+                onclick="calculate()"
+                class="cursor-pointer p-0 text-3xl leading-normal text-[#60e28f]/[0.7] transition-all duration-300 ease-in-out hover:text-[#60e28f]/[0.8] active:bg-transparent active:text-[#60e28f]/[0.4]"
+                type="button"
+                value="Calculate"
+              />
+            </div>
+            <div class="relative mt-8 text-center">
+              <p class="text-3xl text-[#eeeeee]/[0.7]" id="result"></p>
+            </div>
           </div>
         </div>
         <div class="model place-self-end">
