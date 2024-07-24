@@ -12,6 +12,64 @@
     />
     <title>Age Calculator</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      #forkongithub a {
+        background: #333;
+        color: #fff;
+        text-decoration: none;
+        font-family: arial, sans-serif;
+        text-align: center;
+        font-weight: bold;
+        padding: 5px 40px;
+        font-size: 1rem;
+        line-height: 2rem;
+        position: relative;
+        transition: 0.5s;
+      }
+      #forkongithub a:hover {
+        background: #2da859;
+        color: #fff;
+      }
+      #forkongithub a::before,
+      #forkongithub a::after {
+        content: "";
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 1px;
+        left: 0;
+        height: 1px;
+        background: #fff;
+      }
+      #forkongithub a::after {
+        bottom: 1px;
+        top: auto;
+      }
+      @media screen and (min-width: 800px) {
+        #forkongithub {
+          position: fixed;
+          display: block;
+          top: 0;
+          right: 0;
+          width: 200px;
+          overflow: hidden;
+          height: 200px;
+          z-index: 9999;
+        }
+        #forkongithub a {
+          width: 270px;
+          position: absolute;
+          top: 60px;
+          right: -60px;
+          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+        }
+      }
+    </style>
   </head>
   <body class="background font-permanent-marker antialiased">
     <main class="container">
@@ -19,49 +77,57 @@
         class="relative flex h-screen flex-col justify-between gap-x-10 lg:flex-row"
       >
         <div class="blackboard place-self-center">
-          <div class="px-5 pb-5 pt-24">
-            <div class="px-5">
-              <div class="relative mb-4 flex items-center">
-                <label class="align-middle text-3xl text-[#eeeeee]/[0.7]"
-                  >Date:
-                </label>
-                <input
-                  class="w-full border-none bg-transparent pl-2.5 align-middle text-3xl leading-3 text-[#eeeeee]/[0.8] outline-none"
-                  type="number"
-                  value="1"
-                  min="1"
-                  max="31"
-                  name="day"
-                  id="day"
-                />
+          <div class="px-5 pb-5 pt-24" id="group">
+            <h1 class="mb-4 text-3xl text-[#60e28f]/[0.7]">
+              Kelompok <span class="text-[#eeeeee]/[0.8]">3</span>
+            </h1>
+            <ul class="relative ml-4 list-inside list-disc">
+              <li class="mb-2 text-2xl text-[#eeeeee]/[0.9]">
+                Agasta Duan Rahma
+                <span class="text-[#60e28f]/[0.7]">( 230103242 )</span>
+              </li>
+              <li class="mb-2 text-2xl text-[#eeeeee]/[0.9]">
+                Izuddin Arga Eko Sartono
+                <span class="text-[#60e28f]/[0.7]">( 230103265 )</span>
+              </li>
+              <li class="mb-2 text-2xl text-[#eeeeee]/[0.9]">
+                Wachid Amirul Muslim
+                <span class="text-[#60e28f]/[0.7]">( 230103253 )</span>
+              </li>
+            </ul>
+            <div class="mt-8 text-[#60e28f]/[0.7]" id="timer"></div>
+          </div>
+          <div class="hidden px-5 pb-5 pt-24" id="calculator">
+            <div class="relative flex items-center justify-center gap-x-10">
+              <div class="w-full text-center">
+                <h3 class="mb-3 text-2xl text-[#eeeeee]/[0.7]">Date</h3>
+                <p
+                  class="cursor-pointer text-3xl text-[#eeeeee]/[0.9]"
+                  id="date"
+                  onclick="renderDateList()"
+                >
+                  20
+                </p>
               </div>
-              <div class="relative mb-4 flex items-center">
-                <label class="align-middle text-3xl text-[#eeeeee]/[0.7]"
-                  >Month:
-                </label>
-                <input
-                  class="w-full border-none bg-transparent pl-2.5 align-middle text-3xl leading-3 text-[#eeeeee]/[0.8] outline-none"
-                  type="number"
-                  value="5"
-                  min="1"
-                  max="12"
-                  name="month"
+              <div class="w-full text-center">
+                <h3 class="mb-3 text-2xl text-[#eeeeee]/[0.7]">Month</h3>
+                <p
+                  class="cursor-pointer text-3xl text-[#eeeeee]/[0.9]"
                   id="month"
-                />
+                  onclick="renderMonthList()"
+                >
+                  February
+                </p>
               </div>
-              <div class="relative mb-4 flex items-center">
-                <label class="align-middle text-3xl text-[#eeeeee]/[0.7]"
-                  >Year:
-                </label>
-                <input
-                  class="w-full border-none bg-transparent pl-2.5 align-middle text-3xl leading-3 text-[#eeeeee]/[0.8] outline-none"
-                  type="number"
-                  value="2000"
-                  min="1000"
-                  max="9999"
-                  name="year"
+              <div class="w-full text-center">
+                <h3 class="mb-3 text-2xl text-[#eeeeee]/[0.7]">Year</h3>
+                <p
+                  class="cursor-pointer text-3xl text-[#eeeeee]/[0.9]"
                   id="year"
-                />
+                  onclick="renderYearList()"
+                >
+                  1999
+                </p>
               </div>
             </div>
             <div class="relative mt-8 text-center">
@@ -81,7 +147,50 @@
           <img src="./assets/models/cat.gif" alt="model" id="model" />
         </div>
       </section>
+      <div class="absolute inset-0 hidden bg-black/70" id="modalDays">
+        <div class="mx-auto w-full max-w-xl">
+          <div class="flex h-screen items-center justify-center">
+            <div class="modal-box">
+              <div class="text-center">
+                <span class="text-3xl text-[#eeeeee]/[0.8]">Date</span>
+              </div>
+              <ul class="main-days" id="mainDay"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-0 hidden bg-black/70" id="modalMonths">
+        <div class="mx-auto w-full max-w-xl">
+          <div class="flex h-screen items-center justify-center">
+            <div class="modal-box">
+              <div class="text-center">
+                <span class="text-3xl text-[#eeeeee]/[0.8]">Month</span>
+              </div>
+              <ul class="main-months" id="mainMonth"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-0 hidden bg-black/70" id="modalYears">
+        <div class="mx-auto w-full max-w-xl">
+          <div class="flex h-screen items-center justify-center">
+            <div class="modal-box">
+              <div class="text-center">
+                <span class="text-3xl text-[#eeeeee]/[0.8]">Year</span>
+              </div>
+              <ul class="main-years" id="mainYear"></ul>
+              <div class="pagination" id="pagination"></div>
+              <div class="opacity-0"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-    <script src="./js/script.js"></script>
+    <span id="forkongithub">
+      <a href="https://github.com/wachidamirul/age-calculator" target="_blank">
+        Fork me on GitHub
+      </a>
+    </span>
+    <script src="./js/global.js"></script>
   </body>
 </html>
