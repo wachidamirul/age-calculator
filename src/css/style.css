@@ -688,6 +688,10 @@ input[type="number"]::-webkit-inner-spin-button,
   margin-top: 2.5rem;
 }
 
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -698,6 +702,10 @@ input[type="number"]::-webkit-inner-spin-button,
 
 .w-full {
   width: 100%;
+}
+
+.w-\[\"370px\"\] {
+  width: "370px";
 }
 
 .cursor-pointer {
