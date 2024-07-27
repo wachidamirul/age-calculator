@@ -1,5 +1,6 @@
 /node_modules
-pnpm-lock.yaml
 /.idea
 /.vscode
 note.txt
+*.zip
+*.txt
